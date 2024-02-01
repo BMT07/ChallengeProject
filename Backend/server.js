@@ -9,13 +9,19 @@ app.use(cors())
 
 connect()
 app.use(express.json({ extended: false }))
-app.use('/', require('./routes/userController'))
-
-app.use('/forum', require('./routes/messageController'))
 
 app.get('/', (req, res) => {
     res.json("Hello")
 })
+
+
+
+
+app.use('/api', require('./routes/userController'))
+
+app.use('/forum', require('./routes/messageController'))
+
+
 
 const port = process.env.PORT || 5000
 

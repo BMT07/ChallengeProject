@@ -56,7 +56,7 @@ function DemoFooter() {
           <div className="col-md-6">
             <h1>À propos de nous</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Issus d'écoles d'ingenieurs et de management nous sommes des jeunes entrepreneurs et dynamiques et nous avons une vision claire qui est celle de redonner vie à nos appareils et protéger l'environnement
             </p>
             {/* Ajoutez d'autres informations sur votre entreprise ici */}
           </div>

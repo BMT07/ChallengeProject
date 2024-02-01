@@ -25,7 +25,7 @@ function Index() {
         <div></div>
         <div></div>
         <Middle />
-        <DemoFooter />
+        {/* <DemoFooter /> */}
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import DemoFooter from 'components/Footers/DemoFooter'
 const Middle = () => {
     return (
         <>
@@ -13,6 +13,8 @@ const Middle = () => {
                 <h2 className="presentation-title">Sauver la planète</h2>
 
             </div>
+            <DemoFooter />
+
         </>
     )
 }

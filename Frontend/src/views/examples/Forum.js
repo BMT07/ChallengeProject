@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap styles
 import { jwtDecode } from 'jwt-decode'; // Import jwt-decode library
 import { Modal, Button } from 'react-bootstrap';
 import ReplyModal from './Modal';
+import { useNavigate } from 'react-router-dom';
 
 const Forum = () => {
     const [messages, setMessages] = useState([]);
@@ -13,6 +14,7 @@ const Forum = () => {
     const [selectedParentMessageId, setSelectedParentMessageId] = useState(null);
     const [replyContent, setReplyContent] = useState('');
     const [showReplyModal, setShowReplyModal] = useState(false);
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get('http://localhost:5000/forum/list')
@@ -92,7 +94,12 @@ const Forum = () => {
 
     return (
         <div className="container mt-5">
-            <h1 className="mb-4">Forum</h1>
+            <div className="d-flex justify-content-between mb-3">
+                <h1 className="mb-4">Forum</h1>
+                <button type="button" className="btn btn-danger" onClick={() => navigate('/')}>
+                    Retour
+                </button>
+            </div>
             <div className="mb-4">
                 {messages.map(message => (
                     <div key={message._id} className="border p-3 mb-3">
@@ -107,7 +114,7 @@ const Forum = () => {
                             </div>
                         )}
 
-                        <button type="button" class="btn btn-secondary mt-1" onClick={() => handleReplyClick(message._id)}>Répondre</button>
+                        <button type="button" class="btn btn-secondary mt-1 ms-3" onClick={() => handleReplyClick(message._id)}>Répondre</button>
                     </div>
                 ))}
             </div>
